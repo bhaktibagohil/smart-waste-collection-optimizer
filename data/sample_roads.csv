@@ -1,0 +1,39 @@
+u,v,distance_km,road_type,road_name
+DEPOT,BIN-01,0.85,two_way,Central Depot Link Road
+DEPOT,BIN-03,0.92,two_way,Municipal Gardens Avenue
+DEPOT,BIN-07,1.25,two_way,Riverside Access Bypass
+DEPOT,BIN-08,1.40,two_way,Old Town Main Arterial
+BIN-01,BIN-02,0.95,two_way,Market Connector St
+BIN-01,BIN-03,0.65,two_way,Gandhi Promenade
+BIN-01,BIN-10,1.10,two_way,Civic Library Expressway
+BIN-02,BIN-04,0.78,two_way,Metro Transit Corridor
+BIN-02,BIN-08,1.05,two_way,Heritage Ring Road
+BIN-03,BIN-12,1.20,two_way,South Residential Blvd
+BIN-03,BIN-07,1.15,two_way,Riverside Park Alley
+BIN-04,BIN-05,0.72,two_way,Hospital Expressway
+BIN-04,BIN-14,1.35,two_way,West Sports Road
+BIN-05,BIN-06,0.98,two_way,Tech Corridor Link
+BIN-05,BIN-09,1.15,two_way,University South Cross
+BIN-06,BIN-11,1.25,two_way,Industrial Ringway
+BIN-06,BIN-17,0.75,two_way,Innovation Highway
+BIN-07,BIN-08,0.85,two_way,Riverfront West Road
+BIN-07,BIN-16,1.05,two_way,Botanical Bypass
+BIN-08,BIN-14,1.80,two_way,Western Perimeter Blvd
+BIN-09,BIN-11,1.45,two_way,North Industrial Link
+BIN-09,BIN-18,1.10,two_way,Terminal Highway
+BIN-09,BIN-14,1.20,two_way,Campus Sports Loop
+BIN-10,BIN-13,0.88,two_way,Library Railway Link
+BIN-10,BIN-17,0.95,two_way,Commerce Sector Way
+BIN-10,BIN-12,1.55,two_way,East Residential Connector
+BIN-11,BIN-18,1.30,two_way,Outer Logistics Trunk
+BIN-11,BIN-17,1.40,two_way,Logistics Tech Avenue
+BIN-12,BIN-15,1.10,two_way,Community Health Link
+BIN-12,BIN-16,1.45,two_way,Garden South Road
+BIN-13,BIN-17,0.65,two_way,Railway Commerce Street
+BIN-13,BIN-15,1.25,two_way,Colony Clinic Way
+BIN-14,BIN-18,1.90,two_way,Terminal Stadium Bypass
+BIN-15,BIN-10,1.30,two_way,Clinic Library Road
+BIN-17,BIN-18,1.65,two_way,East Terminal Arterial
+BIN-02,BIN-05,1.10,one_way,Market to Hospital One-Way Slip
+BIN-06,BIN-13,1.35,one_way,Tech to Railway One-Way Freight Lane
+BIN-18,DEPOT,3.60,one_way,North Terminal Inbound Expressway
