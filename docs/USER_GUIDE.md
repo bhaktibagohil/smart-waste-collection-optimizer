@@ -36,22 +36,27 @@ The browser will automatically open to `http://localhost:8501`.
 
 ---
 
-## 2. Walkthrough of Application Views
+## 2. Application Architecture: Two Dedicated Areas
 
-The left sidebar contains 9 primary navigation views:
+The application is cleanly organized into two dedicated areas using a switcher at the top of the sidebar:
 
-```
-Navigation Views:
-  🏙️ Home & Overview
-  🗑️ Bin Management
-  🗺️ Road Network & Graph
-  🚛 Route Optimizer
-  📍 Interactive Route Map
-  📊 Route History & Reports
-  🧪 DAA Algorithm Lab
-  📈 Complexity & Benchmarks
-  📚 DAA Syllabus & Viva Guide
-```
+### A. 🚛 Waste Collection Management (Municipal Operations - Default Mode)
+Designed for everyday municipal workers, route supervisors, and sanitation administrators:
+1. **Home Dashboard**: Immediate situational awareness (bins needing attention, overflowing count, today's completion progress, recommended action, and quick map preview).
+2. **Manage Waste Bins**: Tabular bin management, plain language fill categories, add/edit forms, CSV backup/restore.
+3. **Plan Collection Route**: Guided 4-step workflow (settings, route generation, plain-language results, alternatives comparison).
+4. **Collection Map**: Interactive street map with depot base, color-coded markers, and stop sequence badges.
+5. **Collection History**: Historical audit trail of saved routes with performance metrics and CSV export.
+6. **Reports**: Operational analytics (waste distribution, collection completion donut chart, fleet summary statistics).
+
+### B. 🎓 Student & Project Details (DAA Academic Area)
+Designed for examiners, professors, and students evaluating algorithm engineering:
+1. **DAA Algorithm Lab**: Interactive runnable workbench for Units 1 to 8.
+2. **Algorithm Complexity & Benchmarks**: Live empirical execution timing profiler and Big-O growth curves.
+3. **Road Network Graph Inspector**: Graph topology metrics, one-way road segments, and Dijkstra path inspector.
+4. **DAA Syllabus Coverage Matrix**: Detailed syllabus alignment table across all 8 units.
+5. **Project Academic Report**: Complete documentation report with problem formulation, data models, and methodology.
+6. **Viva Preparation Guide**: 25+ high-yield oral examination questions with model answers.
 
 ---
 

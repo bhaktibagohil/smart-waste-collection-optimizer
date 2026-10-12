@@ -13,8 +13,10 @@ This project bridges theoretical algorithm engineering with a genuine municipal 
 
 ## 🌟 Key Features
 
-### 1. Smart Waste Collection System
-- **Bin Management (CRUD)**: Create, inspect, update, and delete waste bins with strict validation on coordinates, fill percentages ($0-100\%$), non-negative weights, and unique IDs.
+### 1. Smart Waste Collection System (Municipal Operations Mode)
+- **Two Dedicated Application Areas**: Cleanly separated into **Municipal Operations Mode** for everyday sanitation workers and **Student & Project Details** for academic DAA examination.
+- **Home Operations Dashboard**: Real-time operational situational awareness answering: Which bins need attention? Which are overflowing? Today's collection progress? What should the fleet do next?
+- **Bin Management (CRUD)**: Create, inspect, update, and delete waste bins with plain language categories (*Overflowing*, *Nearly Full*, *Partly Full*, *Empty/Low*) and strict validation.
 - **Transparent Multi-Criteria Priority Ranking**: Deterministic mathematical urgency scoring (NOT a black-box AI model):
   $$\text{Priority Score} = (\text{WasteLevel}\% \times 0.50) + \text{UrgencyPoints} + (\text{DaysElapsed} \times 2.0)$$
 - **Road Network Representation**: Models urban street networks as a weighted directed graph (`NetworkX DiGraph`), supporting two-way boulevards, one-way alleys, and non-negative travel distances.

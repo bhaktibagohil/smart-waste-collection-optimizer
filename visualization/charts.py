@@ -140,3 +140,75 @@ def plot_bin_waste_distribution(bins: List[Dict[str, Any]]) -> plt.Figure:
 
     fig.tight_layout()
     return fig
+
+
+def plot_waste_category_bars(bins: List[Dict[str, Any]]) -> plt.Figure:
+    """
+    Plot bins categorized by plain-language waste level:
+    Empty/Low (<50%), Partly Full (50-74%), Nearly Full (75-84%), Overflowing (>=85%).
+    """
+    cat_counts = {
+        "Empty or Low\n(< 50%)": 0,
+        "Partly Full\n(50–74%)": 0,
+        "Nearly Full\n(75–84%)": 0,
+        "Overflowing\n(≥ 85%)": 0
+    }
+
+    for b in bins:
+        lvl = float(b.get("waste_level", 0.0))
+        if lvl >= 85.0:
+            cat_counts["Overflowing\n(≥ 85%)"] += 1
+        elif lvl >= 75.0:
+            cat_counts["Nearly Full\n(75–84%)"] += 1
+        elif lvl >= 50.0:
+            cat_counts["Partly Full\n(50–74%)"] += 1
+        else:
+            cat_counts["Empty or Low\n(< 50%)"] += 1
+
+    labels = list(cat_counts.keys())
+    values = list(cat_counts.values())
+    colors = ["#10b981", "#3b82f6", "#f97316", "#ef4444"]
+
+    fig, ax = plt.subplots(figsize=(7, 3.8), dpi=100)
+    bars = ax.bar(labels, values, color=colors, edgecolor="#475569", width=0.55)
+    ax.set_ylabel("Number of Bins", fontweight="bold")
+    ax.set_title("Bins by Waste Fill Category", fontsize=12, fontweight="bold", pad=10)
+    ax.grid(axis="y", linestyle="--", alpha=0.5)
+
+    for bar in bars:
+        h = bar.get_height()
+        ax.annotate(f"{int(h)}", xy=(bar.get_x() + bar.get_width() / 2, h),
+                    xytext=(0, 3), textcoords="offset points", ha="center", va="bottom",
+                    fontweight="bold", fontsize=10)
+
+    fig.tight_layout()
+    return fig
+
+
+def plot_collection_status_pie(collected_count: int, waiting_count: int) -> plt.Figure:
+    """
+    Plot clean donut chart of collection progress (Collected vs Waiting).
+    """
+    total = collected_count + waiting_count
+    if total == 0:
+        fig, ax = plt.subplots(figsize=(5, 3.8), dpi=100)
+        ax.text(0.5, 0.5, "No Bins Available", ha="center", va="center", fontsize=12)
+        ax.axis("off")
+        return fig
+
+    labels = [f"Collected ({collected_count})", f"Waiting ({waiting_count})"]
+    sizes = [collected_count, waiting_count]
+    colors = ["#10b981", "#f97316"]
+
+    fig, ax = plt.subplots(figsize=(5.5, 3.8), dpi=100)
+    wedges, texts, autotexts = ax.pie(
+        sizes, labels=labels, autopct="%1.1f%%",
+        startangle=90, colors=colors,
+        wedgeprops=dict(width=0.45, edgecolor="white", linewidth=2)
+    )
+    for at in autotexts:
+        at.set_fontweight("bold")
+        at.set_color("white")
+    ax.set_title("Today's Collection Progress", fontsize=12, fontweight="bold", pad=10)
+    fig.tight_layout()
+    return fig
